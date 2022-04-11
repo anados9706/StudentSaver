@@ -1,5 +1,10 @@
-#test 1
-#test HELLO
-print ("Hello Student\n ")
-name = input("please enter your name: ")
-print (f"Hello {name}")
+class Student:
+    def __init__(self, name, id, gpa):
+        self.name = name
+        self.id = id
+        self.gpa = gpa
+
+def createStudent():
+    id = input("Please enter student id")
+    input("Please enter student id")
+    

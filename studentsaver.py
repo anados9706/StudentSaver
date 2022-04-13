@@ -11,16 +11,21 @@ def createStudent():
     gpa = input("Please enter GPA")
     new_student = Student(name,id,gpa)
     #TODO: Save on data.txt
+    with open("data.txt", "a+") as data:
+        data.write(id + "\n")
+        data.write(name + "\n")
+        data.write(gpa + "\n")
+
 
 def readStudent():
-    #TODO: Read Student
+    #TODO: ReadCreate  Student
     print('')
 def updateStudent():
     #TODO: Update Student
     print('')
 def deleteStudent():
     #TODO: Delete Student
-    print(' ')
+    print('')
 
 
 while True:
@@ -33,4 +38,3 @@ while True:
         break
     else :
         print("Invalid command, please try again")
-

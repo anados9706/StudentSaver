@@ -20,7 +20,7 @@ def updateStudent():
     print('')
 def deleteStudent():
     #TODO: Delete Student
-    print('')
+    print(' ')
 
 
 while True:

@@ -1,4 +1,3 @@
-
 class Student:
     def __init__(self, name, id, gpa):
         self.name = name
@@ -23,10 +22,12 @@ def readStudent():
 def updateStudent():
     #TODO: Update Student
     print('')
-def deleteStudent():
-    #TODO: Delete Student
-    print('')
 
+def deleteStudent():               #PORTER
+    f = open("data.txt", "r+")
+    f.seek(0)
+    f.truncate()
+    print("Data successfully deleted!")
 
 while True:
     user_input = input("Choose: Create, Read, Update, Delete, Exit\n")
@@ -34,6 +35,8 @@ while True:
         createStudent()
     elif user_input == 'Read':
         readStudent()
+    elif user_input == "Delete":
+        deleteStudent()
     elif user_input == 'Exit':
         break
     else :

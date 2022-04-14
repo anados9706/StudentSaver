@@ -1,4 +1,3 @@
-
 class Student:
     def __init__(self, name, id, gpa):
         self.name = name
@@ -10,6 +9,7 @@ def createStudent():
     id = input("Please enter student id ")
     gpa = input("Please enter GPA ")
     new_student = Student(name,id,gpa)
+
     with open("data.txt", "a+") as data:
         data.write(id + "\n")
         data.write(name + "\n")
@@ -40,7 +40,6 @@ def deleteStudent():               #PORTER
     f.truncate()
     print("Data successfully deleted!")
 
-
 while True:
     user_input = input("Choose: Create, Read, Update, Delete, Exit\n")
     if user_input == 'Create':
@@ -53,4 +52,3 @@ while True:
         break
     else :
         print("Invalid command, please try again")
-

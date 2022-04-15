@@ -15,10 +15,10 @@ def createStudent():
         data.write(name + "\n")
         data.write(gpa + "\n")
 
-
 def readStudent():
     #TODO: ReadCreate  Student
     print('')
+    
 def updateStudent():
     #TODO: Update Student
     print('')

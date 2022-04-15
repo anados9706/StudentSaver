@@ -9,16 +9,24 @@ def createStudent():
     id = input("Please enter student id")
     gpa = input("Please enter GPA")
     new_student = Student(name,id,gpa)
-    #TODO: Save on data.txt
     with open("data.txt", "a+") as data:
         data.write(id + "\n")
         data.write(name + "\n")
         data.write(gpa + "\n")
 
-def readStudent():
-    #TODO: ReadCreate  Student
-    print('')
-    
+def readStudent():              #Marina
+    id = input("Please enter student id ")
+    myfile = open("data.txt", "r")
+    contents = myfile.readlines()
+    i=0
+    while i < len(contents):
+        if contents[i].replace("\n", "")==id:
+            print(contents[i])
+            print(contents[i+1])
+            print(contents[i+2])
+        myfile.close()
+        i+=3
+  
 def updateStudent():
     #TODO: Update Student
     print('')

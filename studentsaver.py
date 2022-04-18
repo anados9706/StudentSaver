@@ -35,10 +35,27 @@ def updateStudent():
     print('')
 
 def deleteStudent():               #PORTER
-    f = open("data.txt", "r+")
-    f.seek(0)
-    f.truncate()
-    print("Data successfully deleted!")
+    id = input("Please enter student id ")
+    with open("data.txt", "r") as myfile:
+        data = myfile.readlines()
+    with open("data.txt", "w") as myfile:
+        deleted = False
+        i=0
+        while i < len(data):
+            if data[i].replace("\n", "")!=id:
+                myfile.write(data[i])
+                myfile.write(data[i+1])
+                myfile.write(data[i+2])
+            else:
+                deleted = True
+                print(id + " successfully deleted!")
+            i+=3
+        if not deleted:
+            print("Nothing to delete")
+
+    
+    
+    
 
 while True:
     user_input = input("Choose: Create, Read, Update, Delete, Exit\n")

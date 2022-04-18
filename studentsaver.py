@@ -1,35 +1,32 @@
 class Student:
-    def __init__(self, name, id, gpa):
+    def __init__(self, name, ID, GPA):
         self.name = name
-        self.id = id
-        self.gpa = gpa
+        self.ID = ID
+        self.GPA = GPA
 
 def createStudent():
-    name = input("Please enter Name ")
-    id = input("Please enter student id ")
-    gpa = input("Please enter GPA ")
-    new_student = Student(name,id,gpa)
-
+    name = input("Please enter Name")
+    ID = input("Please enter student ID")
+    GPA = input("Please enter GPA")
+    new_student = Student(name,id,GPA)
     with open("data.txt", "a+") as data:
-        data.write(id + "\n")
         data.write(name + "\n")
+        data.write(id + "\n")
         data.write(gpa + "\n")
 
 def readStudent():              #Marina
-    id = input("Please enter student id ")
+    ID = input("Please enter student ID ")
     myfile = open("data.txt", "r")
     contents = myfile.readlines()
     i=0
     while i < len(contents):
-        if contents[i].replace("\n", "")==id:
+        if contents[i].replace("\n", "")==ID:
             print(contents[i])
             print(contents[i+1])
             print(contents[i+2])
         myfile.close()
         i+=3
-    
-    
-
+  
 def updateStudent():
     #TODO: Update Student
     print('')

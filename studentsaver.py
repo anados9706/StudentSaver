@@ -27,9 +27,17 @@ def readStudent():              #Marina
         myfile.close()
         i+=3
   
-def updateStudent():
-    #TODO: Update Student
-    print('')
+def updateStudent():                #VY
+    deleteStudent()
+    new_name = input("Please enter new name ")
+    new_id = input("Please enter new ID ")
+    new_gpa = input("Please enter new GPA ")
+    update_new_student = Student(new_name, new_id, new_gpa)
+    with open("data.txt", "a+") as data:
+        data.write(new_id + "\n")
+        data.write(new_name + "\n")
+        data.write(new_gpa + "\n")
+    print("Update success!")
 
 def deleteStudent():               #PORTER
     id = input("Please enter student ID ")
@@ -60,6 +68,8 @@ while True:
         createStudent()
     elif user_input == 'Read':
         readStudent()
+    elif user_input == 'Update':
+        updateStudent()
     elif user_input == "Delete":
         deleteStudent()
     elif user_input == 'Exit':

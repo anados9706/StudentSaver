@@ -1,26 +1,26 @@
 class Student:
-    def __init__(self, name, ID, GPA):
+    def __init__(self, name, id, gpa):
         self.name = name
-        self.ID = ID
-        self.GPA = GPA
+        self.id = id
+        self.gpa = gpa
 
 def createStudent():
-    name = input("Please enter Name")
-    ID = input("Please enter student ID")
-    GPA = input("Please enter GPA")
-    new_student = Student(name,id,GPA)
+    name = input("Please enter Name ")
+    id = input("Please enter student ID ")
+    gpa = input("Please enter GPA ")
+    new_student = Student(name,id,gpa)
     with open("data.txt", "a+") as data:
-        data.write(name + "\n")
         data.write(id + "\n")
+        data.write(name + "\n")
         data.write(gpa + "\n")
 
 def readStudent():              #Marina
-    ID = input("Please enter student ID ")
+    id = input("Please enter student ID ")
     myfile = open("data.txt", "r")
     contents = myfile.readlines()
     i=0
     while i < len(contents):
-        if contents[i].replace("\n", "")==ID:
+        if contents[i].replace("\n", "")==id:
             print(contents[i])
             print(contents[i+1])
             print(contents[i+2])
@@ -32,7 +32,7 @@ def updateStudent():
     print('')
 
 def deleteStudent():               #PORTER
-    id = input("Please enter student id ")
+    id = input("Please enter student ID ")
     with open("data.txt", "r") as myfile:
         data = myfile.readlines()
     with open("data.txt", "w") as myfile:
